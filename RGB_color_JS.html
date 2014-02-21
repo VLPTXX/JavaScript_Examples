@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>RGB Color Test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+<h2>Set values for RGB (0 to 255)</h2></br>
+
+<script>   
+function ShowColor () {
+    var redvalue = document.getElementById("field_red").value;
+    var greenvalue = document.getElementById("field_green").value;
+    var bluevalue = document.getElementById("field_blue").value;
+    
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.fillStyle="rgb(" + redvalue + "," + greenvalue + "," + bluevalue + ")";
+ctx.fillRect(0,0,300,100);
+}
+
+</script>    
+
+Red:    <input type="text" value="0" id="field_red"><br>
+Green:  <input type="text" value="0" id="field_green"><br>
+Blue:   <input type="text" value="0" id="field_blue"><br>
+<br>
+<button onclick="ShowColor()">ShowColor</button>
+<br>
+
+<canvas id="myCanvas" width="300" height="100"></canvas>
+
+
+
+
+    </body>
+</html>
