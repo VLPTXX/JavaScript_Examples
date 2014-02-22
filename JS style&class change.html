@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+This HTML document demonstrates how to use JavaScript 
+for dynamic generation of HTML code, accessing and 
+changing styles and classes of HTML
+-->
+
+<html>
+    <head>
+        <title>JS style&class change</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+<style>
+.paracl1
+{
+font-size:small;
+color:red;
+} 
+
+.paracl2
+{
+font-size:medium;
+color:blueviolet;
+} 
+</style> 
+
+<script>
+function ChgStyle(x) {
+    if (x.className == "paracl1") {
+    x.className = "paracl2";
+    }
+    else {
+    x.className = "paracl1";   
+    }
+}
+
+function highlight_1(x) {
+x.style.color = "red";
+}
+
+function highlight_2(x) {
+x.style.color = "black";
+}
+</script>       
+    </head>
+    
+    <body>
+<p>Move mouse over to see line highlighted</p>
+
+<script>
+for (var i=0; i<10; i++) {
+document.write("<b onMouseOver='highlight_1(this)' onmouseout='highlight_2(this)' id="+ i +">Hello "+ i +"</b>");
+document.write("<br>");
+}
+</script>    
+
+<br>
+<p id="para1" class="paracl1">Hello World!</p>
+
+<button onclick="ChgStyle(document.getElementById('para1'))">Change style</button>
+</body>
+</html>                       
+        
+    </body>
+</html>
